@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boundless Disciple Tribe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Boundless Disciple Tribe, from The Well XP International: a global community growing in God's Word, prayer and purpose, 30 minutes a day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: a still well. Dark water bands (hero, rhythm, final call) alternate with warm stone; ripples mark the places people are invited to step in. */
+:root {
+  --stone: #f6f2ea;        /* page ground, warm limestone */
+  --stone-deep: #e9e2d5;   /* secondary band */
+  --water: #14181c;        /* deep well, dark bands */
+  --ink: #23201b;          /* body text on stone */
+  --mute: #6b645a;         /* captions on stone */
+  --mute-dark: #b9b2a6;    /* captions on water */
+  --gold: #b88a3a;         /* calls to action, ripples */
+  --gold-soft: #d9b46a;    /* gold on dark */
+  --line: #d6cdbd;
+  --display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --body: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --gutter-l: max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(20px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--stone); color: var(--ink); font: 300 1.0625rem/1.7 var(--body); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.band { padding-block: clamp(64px, 10vw, 120px); }
+.band--deep { background: var(--stone-deep); }
+.band--water { background: var(--water); color: var(--stone); }
+
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.8rem, 7.2vw, 5.6rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+h3 { font-size: 1.6rem; font-weight: 500; }
+p { margin: 0; max-width: 62ch; }
+.eyebrow { font: 500 0.75rem/1.4 var(--body); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.band--water .eyebrow { color: var(--gold-soft); }
+.lede { font-size: 1.2rem; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 30px; background: var(--gold); color: #fff; text-decoration: none; font: 500 0.82rem/1 var(--body); letter-spacing: 0.2em; text-transform: uppercase; transition: background .2s, transform .2s; }
+.btn:hover { background: #a3772c; transform: translateY(-1px); }
+.btn--ghost { background: transparent; color: inherit; border: 1px solid currentColor; }
+.btn--ghost:hover { background: transparent; color: var(--gold-soft); }
+
+/* Draft notice: remove before launch */
+.draft { background: #7a2e1f; color: #fff; text-align: center; font: 500 0.8rem/1.4 var(--body); letter-spacing: 0.08em; padding: 10px var(--gutter-r) 10px var(--gutter-l); }
+.tbc { background: #fff3c4; color: #5a4300; padding: 0 4px; font-style: normal; font-size: 0.9em; }
+
+/* Header */
+.top { position: absolute; top: 0; left: 0; right: 0; z-index: 3; }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; color: var(--stone); }
+.brand { font: 500 0.78rem/1.3 var(--body); letter-spacing: 0.26em; text-transform: uppercase; text-decoration: none; }
+.brand span { display: block; color: var(--gold-soft); letter-spacing: 0.2em; font-weight: 400; }
+.top a.join-link { font: 500 0.78rem/1 var(--body); letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--gold-soft); padding-bottom: 6px; }
+
+/* Hero */
+.hero { position: relative; background: var(--water); color: var(--stone); overflow: hidden; }
+.hero__img { position: absolute; inset: 0; background: url("assets/hero-gathering.jpg") center/cover no-repeat; opacity: .32; }
+.hero__ripples { position: absolute; right: -180px; bottom: -220px; width: 720px; height: 720px; opacity: .55; pointer-events: none; }
+.hero .wrap { position: relative; z-index: 2; padding-block: 150px 96px; display: grid; gap: 28px; }
+.hero h1 em { font-style: italic; color: var(--gold-soft); }
+.hero .lede { max-width: 44ch; color: #e7e1d6; }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+
+/* Proof strip */
+.proof { border-top: 1px solid rgba(246,242,234,.18); position: relative; z-index: 2; }
+.proof .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-block: 28px; }
+.proof b { display: block; font: 400 2.4rem/1 var(--display); color: var(--gold-soft); font-variant-numeric: lining-nums; }
+.proof span { font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--mute-dark); }
+
+/* Two-column feature */
+.split { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.split > * { min-width: 0; }
+.framed { position: relative; }
+.framed::before { content: ""; position: absolute; inset: -14px 14px 14px -14px; border: 1px solid var(--gold); z-index: 0; }
+.framed img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+.commitments { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.commitments li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.commitments li::before { content: ""; width: 14px; height: 14px; border: 1px solid var(--gold); border-radius: 50%; box-shadow: 0 0 0 4px var(--stone), 0 0 0 5px var(--gold); transform: translateY(2px); }
+.minutes { font: italic 400 1.5rem/1.35 var(--display); color: var(--ink); }
+
+/* Who it's for */
+.for { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); }
+.for > * { min-width: 0; }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.checks li { position: relative; padding-left: 34px; font-size: 1.1rem; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 18px; height: 9px; border-left: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(-45deg); }
+.room { font: italic 400 1.45rem/1.4 var(--display); border-left: 1px solid var(--gold); padding-left: 20px; }
+
+/* Weekly rhythm */
+.rhythm { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(246,242,234,.16); border: 1px solid rgba(246,242,234,.16); margin-top: 48px; }
+.rhythm article { background: var(--water); padding: 28px 24px 32px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.when { font: 500 .72rem/1.5 var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); }
+.rhythm p { color: #d8d2c6; font-size: .98rem; }
+
+/* Truth */
+.truth { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.truth > * { min-width: 0; }
+.truth blockquote { margin: 0; font: 400 clamp(2rem, 4.4vw, 3.2rem)/1.12 var(--display); }
+.truth blockquote em { color: var(--gold); }
+.truth img { width: 100%; aspect-ratio: 3/4; object-fit: cover; max-height: 560px; }
+
+/* Outreach */
+.outreach { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--stone); }
+.outreach > * { min-width: 0; }
+.outreach__img { background: url("assets/hands.jpg") center/cover no-repeat; min-height: 340px; filter: grayscale(1); }
+.outreach__body { padding: clamp(40px, 7vw, 88px) var(--gutter-r) clamp(40px, 7vw, 88px) clamp(24px, 6vw, 72px); display: flex; flex-direction: column; gap: 20px; }
+.programs { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.programs li { border: 1px solid var(--line); padding: 6px 12px; font-size: .85rem; letter-spacing: .04em; }
+.seen { font: italic 400 1.35rem/1.4 var(--display); }
+
+/* Final call */
+.final { position: relative; overflow: hidden; text-align: center; }
+.final .wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.final p { margin-inline: auto; }
+.verse { font: italic 400 clamp(1.7rem, 3.6vw, 2.6rem)/1.25 var(--display); max-width: 26ch; }
+.verse cite { display: block; margin-top: 12px; font: 500 .78rem/1 var(--body); letter-spacing: .24em; text-transform: uppercase; font-style: normal; color: var(--gold-soft); }
+.final__ripples { position: absolute; left: 50%; top: 50%; width: 900px; height: 900px; transform: translate(-50%, -50%); opacity: .35; pointer-events: none; }
+
+/* Footer */
+footer { background: #0e1114; color: var(--mute-dark); font-size: .92rem; }
+footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding-block: 56px 40px; }
+footer .wrap > * { min-width: 0; }
+footer h4 { margin: 0 0 12px; font: 500 .72rem/1 var(--body); letter-spacing: .22em; text-transform: uppercase; color: var(--stone); }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+footer a { text-decoration: none; border-bottom: 1px solid transparent; }
+footer a:hover { border-color: var(--gold-soft); color: var(--stone); }
+.motto { font: italic 400 1.35rem/1.35 var(--display); color: var(--stone); }
+.legal { border-top: 1px solid rgba(255,255,255,.08); }
+.legal .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding-block: 18px; font-size: .8rem; grid-template-columns: none; }
+
+/* Ripple motion: one slow breath, nothing else moves */
+.ripple { transform-origin: center; animation: breathe 9s ease-in-out infinite; }
+.ripple:nth-child(2) { animation-delay: -3s; }
+.ripple:nth-child(3) { animation-delay: -6s; }
+@keyframes breathe { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ripple { animation: none; } html { scroll-behavior: auto; } .btn { transition: none; } }
+
+@media (max-width: 860px) {
+  .split, .for, .truth, .outreach { grid-template-columns: 1fr; }
+  .rhythm { grid-template-columns: 1fr 1fr; }
+  footer .wrap { grid-template-columns: 1fr; }
+  .truth img { aspect-ratio: 4/3; }
+  .outreach__body { padding-left: var(--gutter-l); }
+}
+@media (max-width: 520px) {
+  .proof .wrap { grid-template-columns: 1fr; gap: 16px; }
+  .proof .wrap > div { display: flex; align-items: baseline; gap: 14px; }
+  .rhythm { grid-template-columns: 1fr; }
+  .top .wrap { padding-block: 16px; }
+  .top a.join-link { display: none; }
+  .hero .wrap { padding-block: 112px 64px; }
+}
+</style>
+</head>
+<body>
+
+<div class="draft" role="note">DRAFT – for Mo’Tolani’s approval. Highlighted items are marked [TO CONFIRM].</div>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Boundless Disciple Tribe<span>The Well XP International</span></a>
+    <a class="join-link" href="#join">Join the Tribe</a>
+  </div>
+</header>
+    <div class="hero__img" role="img" aria-label="A congregation gathered for teaching"></div>
+    <svg class="hero__ripples" viewBox="0 0 720 720" aria-hidden="true">
+      <circle class="ripple" cx="360" cy="360" r="140" fill="none" stroke="#d9b46a" stroke-width="1"/>
+      <circle class="ripple" cx="360" cy="360" r="240" fill="none" stroke="#d9b46a" stroke-width="1"/>
+      <circle class="ripple" cx="360" cy="360" r="340" fill="none" stroke="#d9b46a" stroke-width="1"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Go beyond belief. Become a disciple.</p>
+      <h1 id="hero-title">Christianity was never meant to be lived <em>in isolation.</em></h1>
+      <p class="lede">Join a global tribe growing in God’s Word, building a consistent prayer life, and learning to live as disciples, a few focused minutes at a time.</p>
+      <div class="hero__ctas">
+        <a class="btn" href="#join" id="cta-hero">Join the Boundless Tribe</a>
+      </div>
+    </div>
+    <div class="proof">
+      <div class="wrap">
+        <div><b>25,000+</b><span>Prayer requests answered</span></div>
+        <div><b>50+</b><span>Countries reached</span></div>
+        <div><b>2004</b><span>Praying online since</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="more-title">
+    <div class="wrap split">
+      <div class="framed"><img src="assets/prayer-circle.jpg" alt="Members of the community praying together on a retreat porch" loading="lazy" width="1200" height="676"></div>
+      <div class="stack">
+        <p class="eyebrow">This is more than a community</p>
+        <h2 id="more-title">A place where faith becomes a lifestyle.</h2>
+        <p>Here you will find people committed to:</p>
+        <ul class="commitments">
+          <li><span>Growing in God’s Word</span></li>
+          <li><span>Developing a consistent prayer life</span></li>
+          <li><span>Becoming disciples who influence the world for Christ <mark class="tbc">[TO CONFIRM wording]</mark></span></li>
+        </ul>
+        <p class="minutes">You do not need hours of free time. Just 30 minutes a day and a willing heart. <mark class="tbc">[TO CONFIRM wording]</mark></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--deep" aria-labelledby="for-title">
+    <div class="wrap for">
+      <div class="stack">
+        <p class="eyebrow">Who is this for?</p>
+        <h2 id="for-title">Boundless Disciple Tribe is for you if:</h2>
+        <p class="room">Whether you are a new believer or you have walked with Christ for years, there is room for you.</p>
+      </div>
+      <ul class="checks">
+        <li>You desire a deeper relationship with Jesus.</li>
+        <li>You are ready to grow spiritually.</li>
+        <li>You want accountability and authentic Christian community.</li>
+        <li>You are hungry for biblical teaching.</li>
+        <li>You believe God has more for your life.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band band--water" aria-labelledby="rhythm-title">
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">The weekly rhythm</p>
+        <h2 id="rhythm-title">We cannot pray enough; we can only pray some more.</h2>
+        <p style="color:#d8d2c6">Every week the Tribe gathers online to pray, learn and be refilled. Pick one to start.</p>
+      </div>
+      <div class="rhythm">
+        <article>
+          <span class="when">Mondays · 5 AM CST / 11 AM WAT</span>
+          <h3>Arrows Prayers</h3>
+          <p>Weekly prayer for our children, live on YouTube.</p>
+        </article>
+        <article>
+          <span class="when">Weekly · one hour</span>
+          <h3>Wisdom Lounge</h3>
+          <p>Applying Bible wisdom to the real problems of everyday life.</p>
+        </article>
+        <article>
+          <span class="when">Ongoing since 2004</span>
+          <h3>Secret Place Prayer Altar</h3>
+          <p>Continual intercession and an online prayer portal open to the nations.</p>
+        </article>
+        <article>
+          <span class="when">Yearly · 2027 dates <mark class="tbc">[TO CONFIRM]</mark></span>
+          <h3>Upper Room Retreat</h3>
+          <p>Rest, Refresh, Refire. Our annual gathering to come away and meet with God.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="truth-title">
+    <div class="wrap truth">
+      <div class="stack">
+        <p class="eyebrow" id="truth-title">What makes us different</p>
+        <blockquote>We do not water down the Word. <em>We anchor people in it.</em></blockquote>
+        <p>We are not just teaching people how to pray. We are building communities of spiritual firebrands across nations, through encounters, not religion. We use media and digital tools to disciple nations from any screen.</p>
+      </div>
+      <img src="assets/word-study.jpg" alt="A man studying an open Bible at his desk" loading="lazy" width="600" height="800">
+    </div>
+  </section>
+
+  <section class="outreach" aria-labelledby="wh-title">
+    <div class="outreach__img" role="img" aria-label="Two hands held in comfort"></div>
+    <div class="outreach__body">
+      <p class="eyebrow">Our outreach arm</p>
+      <h2 id="wh-title">Whispering Hearts Outreach</h2>
+      <p>We do not just minister from the pulpit. We minister from the streets. Whispering Hearts is where our compassion becomes action: we feed the hungry, clothe the broken and sit with the grieving.</p>
+      <ul class="programs">
+        <li>Widows outreach</li>
+        <li>Orphan care</li>
+        <li>Prison ministry</li>
+        <li>Street boys, Port Harcourt</li>
+        <li>Back-to-school drives</li>
+      </ul>
+      <p>In a single food outreach, we served 40 widows.</p>
+      <p class="seen">You are seen. You are loved. You are not forgotten.</p>
+      <div><a class="btn" href="https://download.thewellxp.org/wh-donation" rel="noopener" target="_blank">Give to Whispering Hearts</a></div>
+    </div>
+  </section>
+
+  <section class="band band--water final" id="join" aria-labelledby="join-title">
+    <svg class="final__ripples" viewBox="0 0 900 900" aria-hidden="true">
+      <circle class="ripple" cx="450" cy="450" r="200" fill="none" stroke="#d9b46a" stroke-width="1"/>
+      <circle class="ripple" cx="450" cy="450" r="320" fill="none" stroke="#d9b46a" stroke-width="1"/>
+      <circle class="ripple" cx="450" cy="450" r="440" fill="none" stroke="#d9b46a" stroke-width="1"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">Are you ready?</p>
+      <h2 id="join-title">Grow, belong, and become everything God has called you to be.</h2>
+      <p class="verse">“Go therefore and make disciples of all the nations…”<cite>Matthew 28:19</cite></p>
+      <p style="color:#d8d2c6">Join Boundless Disciple Tribe today and begin your discipleship journey with believers who are passionately pursuing Christ together.</p>
+      <a class="btn" href="#" id="cta-join" data-todo="Facebook group link">Join the Tribe on Facebook <mark class="tbc">[TO CONFIRM link]</mark></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="stack" style="gap:14px">
+      <p class="motto">Igniting Hearts. Restoring Lives. Equipping Nations.</p>
+      <p>The Well XP International, where worship becomes a well.</p>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:support@thewellxp.org">support@thewellxp.org</a></li>
+        <li><a href="https://www.instagram.com/thewellxp" rel="noopener" target="_blank">Instagram @thewellxp</a></li>
+        <li><a href="https://www.tiktok.com/@boundlesstrbthewell" rel="noopener" target="_blank">TikTok @boundlesstrbthewell</a></li>
+        <li><a href="#" data-todo="YouTube channel link">YouTube <mark class="tbc">[TO CONFIRM link]</mark></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Free resources</h4>
+      <ul>
+        <li><a href="#" data-todo="Prayer book link">The Power of Effective Prayer <mark class="tbc">[TO CONFIRM link]</mark></a></li>
+        <li><a href="#" data-todo="Email list link">Join the email list <mark class="tbc">[TO CONFIRM link]</mark></a></li>
+        <li><a href="#" data-todo="Clarity Call link">Book a free Clarity Call <mark class="tbc">[TO CONFIRM link]</mark></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="legal">
+    <div class="wrap">
+      <span>© 2026 The Well XP International</span>
+      <span>Live Ready!</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
